@@ -1,6 +1,6 @@
 # SheepContabil — Portal de Automações
 
-Portal demonstrativo do desafio técnico da Sheep Technology. A entrega implementa quatro processos completos em uma aplicação única:
+Portal demonstrativo. A entrega implementa quatro processos completos em uma aplicação única:
 
 - **SC-02:** painel de situação fiscal dos clientes (RPA de alta complexidade);
 - **SC-05:** bloqueio e desbloqueio de clientes inadimplentes (RPA);
