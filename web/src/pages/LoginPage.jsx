@@ -4,8 +4,8 @@ import { Brand } from "../components/ui/Brand";
 import { apiRequest } from "../lib/api";
 
 const initialCredentials = {
-  email: "admin@sheepcontabil.com",
-  password: "Sheep@2026",
+  email: "",
+  password: "",
 };
 
 export function LoginPage({ onLogin }) {
@@ -68,6 +68,7 @@ export function LoginPage({ onLogin }) {
               value={credentials.email}
               onChange={(event) => updateField("email", event.target.value)}
               type="email"
+              autoComplete="username"
               required
             />
           </label>
@@ -78,6 +79,7 @@ export function LoginPage({ onLogin }) {
               value={credentials.password}
               onChange={(event) => updateField("password", event.target.value)}
               type="password"
+              autoComplete="current-password"
               required
             />
           </label>
@@ -87,10 +89,6 @@ export function LoginPage({ onLogin }) {
           <button className="primary" disabled={submitting}>
             {submitting ? "Entrando…" : "Entrar no portal"}
           </button>
-
-          <p className="hint">
-            Operador: operador@sheepcontabil.com · mesma senha
-          </p>
         </form>
       </section>
     </main>
