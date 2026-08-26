@@ -1,0 +1,15 @@
+services:
+  portal:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - sheep-data:/app/data
+    environment:
+      ADDR: ":8080"
+      DATA_FILE: "/app/data/sheep.json"
+    restart: unless-stopped
+
+volumes:
+  sheep-data:
+
