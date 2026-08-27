@@ -65,8 +65,8 @@ func systemStatesForClient(client Client) []simulatedSystemState {
 		},
 		{
 			System: "Sistema de tarefas",
-			State:  client.TaskOwner,
-			Detail: "Responsável atual pelas tarefas",
+			State:  accessState,
+			Detail: "Disponibilidade operacional das tarefas",
 		},
 	}
 }
