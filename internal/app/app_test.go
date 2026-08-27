@@ -74,3 +74,14 @@ func TestFiscalScanKeepsFailedConsultationVisible(t *testing.T) {
 		t.Fatal("esperava uma falha registrada")
 	}
 }
+
+func TestSimulatedSystemsUseNormalizedStatus(t *testing.T) {
+	client := Client{Blocked: true, TaskOwner: "BLOQUEADO"}
+	states := systemStatesForClient(client)
+
+	for _, state := range states {
+		if state.State != "Bloqueado" && state.State != "Acesso suspenso" {
+			t.Fatalf("estado não normalizado no sistema %s: %s", state.System, state.State)
+		}
+	}
+}

@@ -61,13 +61,6 @@ function SystemsComparison({ before, after }) {
         {before.map((system, index) => {
           const current = after[index] || system;
           const changed = system.state !== current.state;
-          const isTaskSystem = system.system === "Sistema de tarefas";
-          const beforeLabel = isTaskSystem
-            ? "Responsável antes"
-            : "Situação antes";
-          const afterLabel = isTaskSystem
-            ? "Responsável depois"
-            : "Situação depois";
 
           return (
             <article className="system-card" key={system.system}>
@@ -75,12 +68,12 @@ function SystemsComparison({ before, after }) {
               <small>{system.detail}</small>
               <div className="state-change">
                 <span>
-                  {beforeLabel}
+                  Situação antes
                   <strong>{system.state}</strong>
                 </span>
                 <b>{changed ? "→" : "="}</b>
                 <span className={changed ? "changed" : ""}>
-                  {afterLabel}
+                  Situação depois
                   <strong>{current.state}</strong>
                 </span>
               </div>
